@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Result Checker - MCSHS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <img src="images/profile.jpg" alt="Profile" class="profile-pic">
+  <nav>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="staff.html">Staff</a></li>
+      <li><a href="students.html">Students</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="container">
+  <h1>Check Your Results</h1>
+  <p>Enter your student ID or roll number to view your recent grades.</p>
+  <form id="results-form" action="/results" method="get" class="result-form">
+    <label for="roll">Roll Number</label><br>
+    <input type="text" id="roll" name="roll" pattern="\d{10}" placeholder="e.g. 0000000001" required><br><small>Enter exactly 10 digits</small><br><br>
+    <button type="submit" class="button">View Results</button>
+  </form>
+  <div id="results-output" style="margin-top:1rem;"></div>
+</main>
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Contact Info</h4>
+      <p><strong>Address:</strong> Meiran, Lagos, Nigeria</p>
+      <p><strong>Phone:</strong> +234 (0) 123 456 7890</p>
+      <p><strong>Email:</strong> <a href="mailto:info@mcshs.edu.ng" style="color: #ffeba7;">info@mcshs.edu.ng</a></p>
+      <p><strong>Website:</strong> <a href="#" style="color: #ffeba7;">www.mcshs.edu.ng</a></p>
+    </div>
+    <div class="footer-section">
+      <p>&copy; 2026 Model Comprehensive School. All rights reserved.</p>
+      <p><a href="contact.html" style="color:#ffeba7;">Contact Us</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

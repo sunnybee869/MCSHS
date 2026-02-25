@@ -1,0 +1,7 @@
+node_modules/
+*.db
+mcshs.db
+.env
+.DS_Store
+dist/
+build/
