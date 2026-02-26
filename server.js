@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
+const bcrypt = require('bcrypt');
+const session = require('express-session');
 const app = express();
 
 // open (or create) a SQLite database file
@@ -39,6 +41,12 @@ db.serialize(() => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'replace_with_env_secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // set true when using HTTPS
+}));
 app.use(express.static(path.join(__dirname)));
 
 function isValidRoll(roll) {
@@ -50,14 +58,20 @@ app.post('/contact', (req, res) => {
   res.send('Thank you for contacting us!');
 });
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   const { logemail, logpass } = req.body;
-  db.get('SELECT * FROM users WHERE email = ? AND password = ?', [logemail, logpass], (err, row) => {
+  db.get('SELECT * FROM users WHERE email = ?', [logemail], async (err, row) => {
     if (err) {
       console.error(err);
       return res.status(500).send('Server error');
     }
-    if (row) {
+    if (!row) {
+      return res.status(401).send('Invalid credentials');
+    }
+    const match = await bcrypt.compare(logpass, row.password);
+    if (match) {
+      req.session.userId = row.id;
+      req.session.userEmail = row.email;
       res.send('Login successful');
     } else {
       res.status(401).send('Invalid credentials');
@@ -65,23 +79,39 @@ app.post('/login', (req, res) => {
   });
 });
 
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
   const { logname, logemail, logpass } = req.body;
-  const stmt = db.prepare('INSERT INTO users(name,email,password) VALUES (?,?,?)');
-  stmt.run(logname, logemail, logpass, function(err) {
-    if (err) {
-      console.error(err);
-      if (err.code === 'SQLITE_CONSTRAINT') {
-        return res.status(400).send('Email already registered');
+  try {
+    const hash = await bcrypt.hash(logpass, 10);
+    const stmt = db.prepare('INSERT INTO users(name,email,password) VALUES (?,?,?)');
+    stmt.run(logname, logemail, hash, function(err) {
+      if (err) {
+        console.error(err);
+        if (err.code === 'SQLITE_CONSTRAINT') {
+          return res.status(400).send('Email already registered');
+        }
+        return res.status(500).send('Server error');
       }
-      return res.status(500).send('Server error');
-    }
-    console.log('New user registered', logname, logemail);
-    res.send('Signup successful');
-  });
+      console.log('New user registered', logname, logemail);
+      req.session.userId = this.lastID;
+      req.session.userEmail = logemail;
+      res.send('Signup successful');
+    });
+  } catch (e) {
+    console.error(e);
+    res.status(500).send('Server error');
+  }
 });
 
-app.get('/results', (req, res) => {
+// simple middleware to guard routes
+function ensureAuthenticated(req, res, next) {
+  if (req.session && req.session.userId) {
+    return next();
+  }
+  res.status(401).send('Authentication required');
+}
+
+app.get('/results', ensureAuthenticated, (req, res) => {
   const roll = req.query.roll;
   if (!roll || !isValidRoll(roll)) {
     return res.status(400).send('Roll number must be exactly 10 digits');
@@ -96,6 +126,14 @@ app.get('/results', (req, res) => {
     } else {
       res.status(404).send('No results found');
     }
+  });
+});
+
+// admin listing route
+app.get('/admin', ensureAuthenticated, (req, res) => {
+  db.all('SELECT roll, math, english FROM results', (err, rows) => {
+    if (err) return res.status(500).send('Server error');
+    res.json(rows);
   });
 });
 

@@ -40,6 +40,14 @@ git push -u origin main
 
 Your site will deploy automatically! 🚀
 
+### Environment Variables
+Render lets you define env vars. Add:
+- `SESSION_SECRET` – a random string used by express-session (e.g. via `openssl rand -base64 32`).
+
+The server will hash passwords with bcrypt and protect routes using sessions.
+
+
+
 ## Important Notes
 
 ⚠️ **SQLite Database Persistence**:
