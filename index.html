@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>MCSHS - Home</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
   <div class="logo">School Logo</div>
-  <img src="images/profile.jpg" alt="Profile" class="profile-pic">
   <button id="menu-toggle" class="menu-btn">☰</button>
-  <nav id="main-nav" class="hidden">
+  <nav id="main-nav">
     <ul class="nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -26,34 +26,129 @@
   </nav>
 </header>
 <main class="container">
-  <h1>Welcome to Meiran Community Senior High School</h1>
-  <p>
-Our Mission Statement</p>
-<p>To make Meiran community senior high school the most efficient disciplined, and of high standard in Lagos state.</p>
-  <section>
-    <h2>Latest News &amp; Events</h2>
-    <p>Check out our <a href="news.html">news page</a> for recent announcements or visit the <a href="events.html">events calendar</a>.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Meiran Community Senior High School</h1>
+    <p class="hero-subtitle">Nurturing Excellence | Building Leaders | Transforming Futures</p>
+    <p class="hero-description">Established as a beacon of academic excellence in Lagos State, MCSHS is committed to providing quality education that develops responsible, innovative, and compassionate citizens.</p>
+    <div class="hero-buttons">
+      <a href="admissions.html" class="button">Apply Now</a>
+      <a href="about.html" class="button button-secondary">Learn More</a>
+    </div>
   </section>
-  <section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-vision">
+    <div class="mission-card">
+      <h3>Our Mission</h3>
+      <p>To make Meiran Community Senior High School the most efficient, disciplined, and highest standard institution in Lagos State, providing students with world-class education that prepares them for global challenges.</p>
+    </div>
+    <div class="vision-card">
+      <h3>Our Vision</h3>
+      <p>To be a leading educational institution recognized for academic excellence, character development, and producing graduates who are equipped to lead and innovate in a rapidly changing world.</p>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section class="features">
+    <h2>Why Choose MCSHS?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h4>Rigorous Curriculum</h4>
+        <p>Comprehensive programs aligned with WAEC standards and international best practices in Science, Arts, and Commercial subjects.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👨‍🏫</div>
+        <h4>Expert Faculty</h4>
+        <p>Highly qualified and dedicated teachers committed to student success and personal development through mentorship.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏫</div>
+        <h4>Modern Facilities</h4>
+        <p>State-of-the-art laboratories, well-stocked library, computer labs, and spacious classrooms for optimal learning.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h4>Excellence Record</h4>
+        <p>Consistent track record of outstanding exam results and numerous awards for academic and extracurricular achievements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚽</div>
+        <h4>Sports & Clubs</h4>
+        <p>Vibrant extracurricular programs including sports, debate, music, drama, and various student clubs.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h4>Global Perspective</h4>
+        <p>Exposure to international standards and collaborations that prepare students for higher education worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <h2>Our Community</h2>
+    <div id="stats">
+      <div class="stat">
+        <span class="number" data-target="2750">0</span>
+        <p>Total Students</p>
+      </div>
+      <div class="stat">
+        <span class="number" data-target="145">0</span>
+        <p>Faculty Members</p>
+      </div>
+      <div class="stat">
+        <span class="number" data-target="98">0</span>
+        <p>% Pass Rate</p>
+      </div>
+      <div class="stat">
+        <span class="number" data-target="35">0</span>
+        <p>Years of Excellence</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Gallery -->
+  <section class="gallery-section">
     <h2>Campus Gallery</h2>
+    <p>Explore our beautiful and well-equipped campus</p>
     <div class="gallery">
       <img src="images/school1.jpg" alt="School exterior">
       <img src="images/classroom.jpg" alt="Classroom scene">
       <img src="images/library.jpg" alt="Library">
     </div>
   </section>
-  <section id="stats">
-    <div class="stat">
-      <span class="number" data-target="1200">0</span>
-      <p>ss1</p>
+
+  <!-- Latest News & Events -->
+  <section class="news-events">
+    <h2>Latest News & Events</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <h4>📰 Recent Announcements</h4>
+        <p>Stay updated with the latest news from our school including exam schedules, holidays, and important notices.</p>
+        <a href="news.html" class="link">View News →</a>
+      </div>
+      <div class="news-card">
+        <h4>📅 Upcoming Events</h4>
+        <p>Join us for exciting events including sports day, cultural festivals, alumni reunions, and academic competitions.</p>
+        <a href="events.html" class="link">View Events →</a>
+      </div>
+      <div class="news-card">
+        <h4>✅ Check Your Results</h4>
+        <p>Access your examination results instantly using your student roll number through our secure portal.</p>
+        <a href="results.html" class="link">Check Results →</a>
+      </div>
     </div>
-    <div class="stat">
-      <span class="number" data-target="350">0</span>
-      <p>ss2</p>
-    </div>
-     <div class="stat">
-      <span class="number" data-target="1200">0</span>
-      <p>ss3</p>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <h2>Ready to Join Our Community?</h2>
+    <p>Take the first step towards an excellent education and bright future. Our admissions team is here to assist you.</p>
+    <div class="cta-buttons">
+      <a href="admissions.html" class="button">Start Admissions</a>
+      <a href="contact.html" class="button button-secondary">Contact Admissions</a>
     </div>
   </section>
 </main>

@@ -93,13 +93,15 @@ h6 span{
 
 .card-3d-wrap {
   position: relative;
-  width: 440px;
-  max-width: 100%;
-  height: 400px;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  min-height: 400px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   perspective: 800px;
-  margin-top: 60px;
+  margin: 20px auto;
+  padding: 0 15px;
 }
 .card-3d-wrapper {
   width: 100%;
@@ -162,7 +164,8 @@ h6 span{
 .form-style {
   padding: 13px 20px;
   padding-left: 55px;
-  height: 48px;
+  height: auto;
+  min-height: 48px;
   width: 100%;
   font-weight: 500;
   border-radius: 4px;
@@ -177,6 +180,7 @@ h6 span{
   transition: all 300ms ease;
   box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
   animation: slideIn 0.6s ease forwards;
+  box-sizing: border-box;
 }
 .form-style:nth-of-type(1) { animation-delay: 0.1s; }
 .form-style:nth-of-type(2) { animation-delay: 0.2s; }
@@ -330,9 +334,9 @@ h6 span{
 
 
 .logo {
-	position: absolute;
-	top: 30px;
-	right: 30px;
+	position: fixed;
+	top: 20px;
+	right: 20px;
 	display: block;
 	z-index: 100;
 	transition: all 250ms linear;
@@ -341,6 +345,16 @@ h6 span{
 	height: 26px;
 	width: auto;
 	display: block;
+}
+
+@media (max-width: 600px) {
+	.logo {
+		top: 10px;
+		right: 10px;
+	}
+	.logo img {
+		height: 20px;
+	}
 }
 
 /* Enhanced animations for login page */
@@ -364,4 +378,83 @@ h6 span{
 @keyframes contentSlideUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .card-3d-wrap {
+    max-width: 100%;
+    margin: 15px auto;
+  }
+  .center-wrap {
+    padding: 0 20px;
+  }
+  .form-style {
+    padding: 10px 15px;
+    padding-left: 45px;
+    font-size: 13px;
+  }
+  .input-icon {
+    left: 10px;
+    font-size: 20px;
+    height: 44px;
+    line-height: 44px;
+  }
+  .btn {
+    height: 40px;
+    font-size: 12px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+  .full-height {
+    min-height: auto;
+    padding-top: 70px;
+  }
+  .card-3d-wrap {
+    margin: 10px auto;
+    padding: 0 10px;
+    min-height: 350px;
+  }
+  .card-3d-wrapper,
+  .card-front,
+  .card-back {
+    border-radius: 4px;
+  }
+  .center-wrap {
+    padding: 0 15px;
+  }
+  .form-style {
+    padding: 10px 15px;
+    padding-left: 40px;
+    height: auto;
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .input-icon {
+    left: 8px;
+    font-size: 18px;
+    height: 44px;
+    line-height: 44px;
+  }
+  .btn {
+    height: 40px;
+    font-size: 11px;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .section {
+    min-height: 100vh;
+  }
+  h6 span {
+    display: block;
+    padding: 10px 0;
+  }
 }
