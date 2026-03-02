@@ -44,7 +44,7 @@ const studentResults = {
     subjects: [
       { subject: 'Mathematics', score: 100, grade: 'A' },
       { subject: 'English Language', score: 80, grade: 'A' },
-      { subject: 'Biology', score: 75, grade: 'B' },
+      { subject: 'Biology', score: 74, grade: 'B' },
       { subject: 'Chemistry', score: 81, grade: 'A' },
       { subject: 'Physics', score: 80, grade: 'A' },
       { subject: 'Government', score: 83, grade: 'A' },
