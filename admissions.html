@@ -15,7 +15,7 @@
     <ul class="nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="admissions.html">Check Admission Status</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="staff.html">Staff</a></li>
@@ -26,16 +26,14 @@
   </nav>
 </header>
 <main class="container">
-  <h1>Admissions</h1>
-  <p>Learn how to apply to MCSHS for the upcoming school year. We accept applications from rising 6th through 12th graders.</p>
-  <section>
-    <h2>How to Apply</h2>
-    <ol>
-      <li>Complete the online application form.</li>
-      <li>Submit previous school transcripts and records.</li>
-      <li>Attend an orientation or interview.</li>
-    </ol>
-  </section>
+  <h1>Check Your Admission Status</h1>
+  <p>Enter your application reference number to check your admission status.</p>
+  <form id="admission-form" action="/admission" method="get" class="result-form">
+    <label for="ref">Application Reference Number</label><br>
+    <input type="text" id="ref" name="ref" pattern="\d{10}" placeholder="e.g. APP2025001" required><br><small>Enter your 10-digit reference number</small><br><br>
+    <button type="submit" class="button">Check Status</button>
+  </form>
+  <div id="admission-output" style="margin-top:1rem;"></div>
 </main>
 <footer>
   <div class="footer-content">
@@ -47,7 +45,7 @@
       <p><strong>Website:</strong> <a href="#" style="color: #ffeba7;">www.mcshs.edu.ng</a></p>
     </div>
     <div class="footer-section">
-      <p>&copy; 2026 Model Comprehensive School. All rights reserved.</p>
+      <p>&copy; 2026 Meiran Community Senior High School. All rights reserved.</p>
       <p><a href="contact.html" style="color:#ffeba7;">Contact Us</a></p>
     </div>
   </div>
