@@ -38,11 +38,11 @@ const studentResults = {
     
   },
   '0000000002': {
-    name: 'Olawale Sabitu',
+    name: 'Okwuegbulem Marvellous',
     class: 'SS3B',
     term: '2nd Term 2025',
     subjects: [
-      { subject: 'Mathematics', score: 72, grade: 'B' },
+      { subject: 'Mathematics', score: 100, grade: 'A' },
       { subject: 'English Language', score: 80, grade: 'A' },
       { subject: 'Biology', score: 75, grade: 'B' },
       { subject: 'Chemistry', score: 81, grade: 'A' },
@@ -63,6 +63,7 @@ const studentResults = {
       { subject: 'Physics', score: 88, grade: 'A' },
       { subject: 'Agricultural Science', score: 82, grade: 'A' }
     ]
+    
   }
 };
 document.addEventListener('DOMContentLoaded', () => {
