@@ -52,11 +52,11 @@ const studentResults = {
     ]
   },
   '0000000003': {
-    name: 'Zainab Muhammad',
+    name: 'Fowode Success Bisola',
     class: 'SS2A',
     term: '2nd Term 2025',
     subjects: [
-      { subject: 'Mathematics', score: 90, grade: 'F' },
+      { subject: 'Mathematics', score: 90, grade: 'A' },
       { subject: 'English Language', score: 87, grade: 'A' },
       { subject: 'Biology', score: 86, grade: 'A' },
       { subject: 'Chemistry', score: 84, grade: 'A' },
