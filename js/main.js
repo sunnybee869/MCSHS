@@ -27,7 +27,7 @@ const studentResults = {
     class: 'SS3A',
     term: '2nd Term 2025',
     subjects: [
-      { subject: 'Mathematics', score: 100, grade: 'A' },
+      { subject: 'Mathematics', score: 29, grade: 'F' },
       { subject: 'English Language', score: 100, grade: 'A' },
       { subject: 'Biology', score: 100, grade: 'A' },
       { subject: 'Chemistry', score: 100, grade: 'A' },
@@ -38,7 +38,7 @@ const studentResults = {
     
   },
   '0000000002': {
-    name: 'Tunde Adeyemi',
+    name: 'Olawale',
     class: 'SS3B',
     term: '2nd Term 2025',
     subjects: [
@@ -56,7 +56,7 @@ const studentResults = {
     class: 'SS2A',
     term: '2nd Term 2025',
     subjects: [
-      { subject: 'Mathematics', score: 90, grade: 'A' },
+      { subject: 'Mathematics', score: 90, grade: 'F' },
       { subject: 'English Language', score: 87, grade: 'A' },
       { subject: 'Biology', score: 86, grade: 'A' },
       { subject: 'Chemistry', score: 84, grade: 'A' },
@@ -65,7 +65,6 @@ const studentResults = {
     ]
   }
 };
-
 document.addEventListener('DOMContentLoaded', () => {
   ajaxForm(document.getElementById('contact-form'), '/contact');
   ajaxForm(document.getElementById('login-form'), '/login');
