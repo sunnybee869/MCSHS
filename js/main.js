@@ -38,7 +38,7 @@ const studentResults = {
     
   },
   '0000000002': {
-    name: 'Olawale',
+    name: 'Olawale Sabitu',
     class: 'SS3B',
     term: '2nd Term 2025',
     subjects: [
