@@ -27,7 +27,7 @@ const studentResults = {
     class: 'SS3A',
     term: '2nd Term 2025',
     subjects: [
-      { subject: 'Mathematics', score: 29, grade: 'F' },
+      { subject: 'Mathematics', score: 90, grade: 'A' },
       { subject: 'English Language', score: 100, grade: 'A' },
       { subject: 'Biology', score: 100, grade: 'A' },
       { subject: 'Chemistry', score: 100, grade: 'A' },
