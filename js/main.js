@@ -457,6 +457,15 @@ const admissionStatus = {
     admissionNumber: 'MCSHS/2025/013'
   }
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    menuToggle.addEventListener('click', function () {
+        mainNav.classList.toggle('hidden');
+    });
+});
 document.addEventListener('DOMContentLoaded', () => {
   ajaxForm(document.getElementById('contact-form'), '/contact');
   ajaxForm(document.getElementById('login-form'), '/login');
