@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuBtn && mainNav) {
     menuBtn.addEventListener('click', () => {
       mainNav.classList.toggle('active');
-      menuBtn.classList.toggle('open');
+      menuBtn.classList.toggle('close');
     });
   }
 
