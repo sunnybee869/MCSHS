@@ -45,7 +45,12 @@ nav {
     top: 50%;
     transform: translateY(-50%);
 }
-
+#main-nav { 
+    position: absolute;
+    top: 3.5rem;
+    right: 1rem;
+    display: none;
+}
 nav .nav { 
     list-style: none;
     margin: 0;
