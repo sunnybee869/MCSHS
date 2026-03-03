@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.getElementById('main-nav');
   if (menuBtn && mainNav) {
     menuBtn.addEventListener('click', () => {
-      mainNav.classList.toggle('hidden');
+      mainNav.classList.toggle('active');
       menuBtn.classList.toggle('open');
     });
   }
