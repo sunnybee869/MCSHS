@@ -457,15 +457,6 @@ const admissionStatus = {
     admissionNumber: 'MCSHS/2025/013'
   }
 };
-
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mainNav = document.getElementById('main-nav');
-
-    menuToggle.addEventListener('click', function () {
-        mainNav.classList.toggle('hidden');
-    });
-});
 document.addEventListener('DOMContentLoaded', () => {
   ajaxForm(document.getElementById('contact-form'), '/contact');
   ajaxForm(document.getElementById('login-form'), '/login');
@@ -581,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.getElementById('main-nav');
   if (menuBtn && mainNav) {
     menuBtn.addEventListener('click', () => {
-      mainNav.classList.toggle('hidden');
+      mainNav.classList.toggle('active');
       menuBtn.classList.toggle('open');
     });
   }
